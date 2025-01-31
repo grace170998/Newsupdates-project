@@ -1,0 +1,119 @@
+/* General Styles */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+
+
+/* Article List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.article-text {
+    padding: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 15px 0;
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* Social Sharing Icons */
+.social-sharing a {
+    margin: 0 10px;
+}
+
+.social-sharing img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Read More Link */
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Bookmark Buttons */
+.bookmark-btn,
+.remove-bookmark-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.bookmark-btn img,
+.remove-bookmark-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .article-content {
+        flex-direction: column;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Hover effects */
+li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}

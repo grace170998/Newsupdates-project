@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <div class="navbar-content">
+        
+        <div class="navbar-logo">
+            <a href="index.html">
+            <img src="/newsupdates-dev2/Components/navbar/newslogo.jpg" alt="Logo" class="logo-icon"></a>
+            <span class="logo-text">News Update</span>
+        </div>
+
+        
+        <div class="navbar">
+            <input type="text" ng-model="searchQuery" placeholder="Search news..." />
+            <button ng-click="search()">Search</button>
+        </div>
+
+
+        <!-- Other Options -->
+        <div class="navbar-options">
+            
+            <a ng-href="/bussinessheadlines" class="navbar-option">
+                <img src="path-to-bussiness-icon.png" alt="bussiness">
+
+            </a>
+            <a ng-href="/weather" class="navbar-option">
+                <img src="path-to-weather-icon.png" alt="Weather">
+                
+            </a>
+            <button class="navbar-option">
+                <a ng-href="/sportsnews">
+                <img src="path-to-sign-icon.png" alt="SPORTS">
+                </a>
+                
+            </button>
+            <a ng-href="/technology" class="navbar-option">
+                <img src="path-to-filter-icon.png" alt="Technology">
+            </a>
+            <a ng-href="/bookmarks" class="navbar-option">Read Later</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+<div class="weather-widget" ng-if="!loading">
+    <h2>Current Weather</h2>
+    
+    <!-- Display error if any -->
+    <div ng-if="error" class="error">{{ error }}</div>
+
+    <!-- Search Form -->
+    <div>
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" placeholder="Search by city" />
+        <button ng-click="searchWeather()">Search</button>
+    </div>
+
+    <!-- Weather Details -->
+    <div ng-if="weather.location">
+        <p><strong>Location:</strong> {{ weather.location }}</p>
+        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+        <p><strong>Condition:</strong> {{ weather.condition }}</p>
+        <img ng-src="{{ weather.icon }}" alt="Weather Icon">
+    </div>
+</div>
+
+<!-- Loading message while fetching data -->
+<div ng-if="loading">Loading weather data...</div>

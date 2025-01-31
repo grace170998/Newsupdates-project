@@ -1,0 +1,22 @@
+<div ng-controller="SearchController">
+
+    <h1>Search Results for "{{ query }}"</h1>
+
+    <!-- Display error message if any -->
+    <div ng-if="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <!-- Display news results -->
+    <div ng-if="!newsResults || newsResults.length === 0" class="no-results">
+        No results found for "{{ query }}".
+    </div>
+
+    <!-- Loop through the results and display each news item -->
+    <div ng-repeat="news in newsResults" class="news-item">
+        <!-- Display image if the news item has an image -->
+        <img ng-if="news.imageUrl" ng-src="{{ news.imageUrl }}" alt="{{ news.title }}" class="news-image" />
+        
+        <h3>{{ news.title }}</h3>
+        <p>{{ news.description }}</p>
+        <a href="{{ news.url }}" target="_blank">Read more</a>
+    </div>
+</div>

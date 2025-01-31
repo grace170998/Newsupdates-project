@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en" ng-app="newsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla News</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="searchBar.js"></script>
+</head>
+<body ng-controller="NewsController"> -->
+
+<!-- </body>
+</html> -->
+<div ng-controller="NewsController">
+    <h1>Top business headlines in the US right now</h1>
+
+    <!-- Loading Spinner -->
+   
+
+    <!-- Articles List -->
+    <ul>
+        <li ng-repeat="article in articles">
+            <div class="article-content">
+                <div ng-if="article.urlToImage">
+                    <img ng-src="{{ article.urlToImage }}" alt="Article Image" class="article-image" />
+                </div>
+                <div class="article-text">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.description }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                    <div class="social-sharing">
+                        <!-- Facebook Share -->
+                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ article.url }}" target="_blank" title="Share on Facebook">
+                            <img src="/newsupdates-dev2/Components/currentnews/facebook.png" alt="Facebook" />
+                        </a>
+                        <!-- Twitter Share -->
+                        <a ng-href="https://twitter.com/intent/tweet?url={{ article.url }}&text={{ article.title }}" target="_blank" title="Share on Twitter">
+                            <img src="/newsupdates-dev2/Components/currentnews/twitter.png" alt="Twitter" />
+                        </a>
+                        <!-- LinkedIn Share -->
+                        <a ng-href="https://www.linkedin.com/shareArticle?mini=true&url={{ article.url }}&title={{ article.title }}" target="_blank" title="Share on LinkedIn">
+                            <img src="/newsupdates-dev2/Components/currentnews/linkedin.png" alt="LinkedIn" />
+                        </a>
+                        <!-- WhatsApp Share -->
+                        <a ng-href="https://api.whatsapp.com/send?text={{ article.title }} {{ article.url }}" target="_blank" title="Share on WhatsApp">
+                            <img src="/newsupdates-dev2/Components/currentnews/whatsapp.png" alt="WhatsApp" />
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Bookmark Button -->
+                <button ng-click="bookmarkArticle(article)" ng-disabled="isBookmarked(article)">
+                    <img ng-src="path-to-bookmark-icon.png" alt="Bookmark" />
+                    {{ isBookmarked(article) ? 'Bookmarked' : 'Bookmark' }}
+                </button>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Bookmarked Articles Section -->
+    <div ng-if="bookmarkedArticles.length > 0">
+        <h3>Bookmarked Articles</h3>
+        <ul>
+            <li ng-repeat="bookmark in bookmarkedArticles">
+                <div class="article-content">
+                    <div ng-if="bookmark.urlToImage">
+                        <img ng-src="{{ bookmark.urlToImage }}" alt="Article Image" class="article-image" />
+                    </div>
+                    <div class="article-text">
+                        <h2>{{ bookmark.title }}</h2>
+                        <p>{{ bookmark.description }}</p>
+                        <a href="{{ bookmark.url }}" target="_blank">Read more</a>
+                    </div>
+                    
+                    <!-- Remove Bookmark Button -->
+                    <button ng-click="removeBookmark(bookmark)">
+                        Remove from Bookmarks
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

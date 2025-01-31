@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <script src="./app.js"></script>
+    <script src="./Components/navbar/navbar.js"></script>
+    <script src="./Components/businessheadlines/businessheadlines.js"></script>
+    
+    <script src="./Components/weather/weather.js"></script>
+    <script src="./Components/currentnews/currentnews.js"></script>
+    <script src="./Components/sportsnews/sportsnews.js"></script>
+    <script src="./Components/technologynews/technologynews.js"></script>
+    <script src="./Components/bookmarks/bookmarks.js"></script>
+    <script src="./service/newsService.js"></script>
+    <script src="./Components/searchresult/searchController.js"></script>
+    
+ 
+    
+</head>
+<body ng-app="newsUpdatesApp">
+    <navbar></navbar>
+    <div ng-view></div>
+    <div ng-controller="CurrentNewsController">
+        <body ng-controller="sportsController">
+            <div ng-controller="TechnologyController">
+                <div ng-controller="SearchController">
+        
+
+    
+    
+    <link rel="stylesheet" href="./Components/navbar/navbar.css">
+    <link rel="stylesheet" href="./Components/businessheadlines/businessheadlines.css">
+    <link rel="stylesheet" href="./Components/weather/weather.css">
+    <link rel="stylesheet" href="./Components/currentnews/currentnews.css">
+    <link rel="stylesheet" href="./Components/sportsnews/sportsnews.css">
+    <link rel="stylesheet" href="./Components/technologynews/technologynews.css">
+    <link rel="stylesheet" href="./Components/searchresult/search.css">
+
+
+   
+    
+</body>
+</html>

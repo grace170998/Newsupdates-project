@@ -1,0 +1,51 @@
+<div ng-controller="CurrentNewsController">
+    <ul>
+        <li ng-repeat="article in articles">
+            <div class="article-content">
+                <div ng-if="article.urlToImage">
+                    <img ng-src="{{ article.urlToImage }}" alt="Article Image" class="article-image" />
+                </div>
+                <div class="article-text">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.description }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                    <div class="social-sharing">
+                        <!-- Facebook Share -->
+                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ article.url }}" target="_blank" title="Share on Facebook">
+                            <img src="/newsupdates-dev2/Components/currentnews/facebook.png" alt="Facebook" />
+                        </a>
+                        <!-- Twitter Share -->
+                        <a ng-href="https://twitter.com/intent/tweet?url={{ article.url }}&text={{ article.title }}" target="_blank" title="Share on Twitter">
+                            <img src="/newsupdates-dev2/Components/currentnews/twitter.png" alt="Twitter" />
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+                <!-- Bookmark Button -->
+                <button ng-click="bookmarkArticle(article)" class="bookmark-btn">
+                    <img src="path-to-bookmark-icon.png" alt="Bookmark" />
+                </button>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Bookmarked Articles Section -->
+    <div ng-if="bookmarkedArticles.length > 0">
+        <h3>Bookmarked Articles</h3>
+        <ul>
+            <li ng-repeat="bookmark in bookmarkedArticles">
+                <div class="article-content">
+                    <div ng-if="bookmark.urlToImage">
+                        <img ng-src="{{ bookmark.urlToImage }}" alt="Article Image" class="article-image" />
+                    </div>
+                    <div class="article-text">
+                        <h2>{{ bookmark.title }}</h2>
+                        <p>{{ bookmark.description }}</p>
+                        <a href="{{ bookmark.url }}" target="_blank">Read more</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

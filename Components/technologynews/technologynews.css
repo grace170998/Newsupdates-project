@@ -1,0 +1,94 @@
+/* Basic styling for the Technology News section */
+/* General layout for the news articles grid */
+/* General layout for the news articles grid */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts number of columns based on screen width */
+  gap: 20px; /* Space between the cards */
+  padding: 20px;
+}
+
+/* Individual card styling */
+.news-article {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Prevents content overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card hover effect */
+.news-article:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Image styling */
+.news-image {
+  width: 100%; /* Makes image full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the space without distortion */
+  max-height: 200px; /* Limits the height of the image */
+}
+
+/* Title styling */
+.news-article h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 15px;
+  font-weight: bold;
+}
+
+/* Description styling */
+.news-article p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 15px 15px;
+  flex-grow: 1; /* Ensures description takes available space */
+}
+
+/* Link styling */
+.news-article a {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 15px;
+  align-self: flex-end; /* Aligns the link at the bottom of the card */
+}
+
+/* Add hover effect for links */
+.news-article a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Loading spinner styling */
+.loading-spinner {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 50px;
+  color: #007bff;
+}
+
+/* Error message styling */
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 50px;
+  color: #d9534f; /* Bootstrap's danger color */
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  border-radius: 5px;
+}
+
+/* General page styling */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}

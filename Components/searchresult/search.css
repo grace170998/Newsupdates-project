@@ -1,0 +1,86 @@
+div[ng-controller="SearchController"] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* No results found styling */
+.no-results {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Card grid container */
+div.ng-repeat {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Spacing between cards */
+    margin-top: 20px;
+}
+
+/* Individual card style */
+.news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* News title styling */
+.news-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* News description styling */
+.news-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    height: 60px;
+    overflow: hidden; /* Hide excess text */
+}
+
+/* Link styling */
+.news-item a {
+    display: inline-block;
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+    color: #0056b3;
+}
+.news-item .news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}

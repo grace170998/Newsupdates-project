@@ -1,0 +1,42 @@
+<!-- technologynews/technologynews.html -->
+<div ng-controller="TechnologyController">
+    <div ng-if="loading" class="loading-spinner">
+        <p>Loading...</p>
+    </div>
+
+    <div ng-if="error" class="error-message">
+        <p>{{ error }}</p>
+    </div>
+
+    <div ng-if="!loading && !error" class="news-container">
+        <div ng-repeat="article in articles" class="news-article">
+            <!-- Display image if available and log URL for debugging -->
+            <div ng-if="article.imageUrl">
+                <p>Image URL: {{ article.imageUrl }}</p> <!-- Debugging line to log the URL -->
+                <img ng-src="{{ article.imageUrl }}" alt="{{ article.title }}" class="news-image" onerror="this.onerror=null;this.src='fallback.jpg';">
+            </div>
+            
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+            <a ng-href="{{ article.url }}" target="_blank">Read more</a>
+            <div class="social-sharing">
+                <!-- Facebook Share -->
+                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ article.url }}" target="_blank" title="Share on Facebook">
+                    <img src="/newsupdates-dev2/Components/currentnews/facebook.png" alt="Facebook" />
+                </a>
+                <!-- Twitter Share -->
+                <a ng-href="https://twitter.com/intent/tweet?url={{ article.url }}&text={{ article.title }}" target="_blank" title="Share on Twitter">
+                    <img src="/newsupdates-dev2/Components/currentnews/twitter.png" alt="Twitter" />
+                </a>
+                <!-- LinkedIn Share -->
+                <a ng-href="https://www.linkedin.com/shareArticle?mini=true&url={{ article.url }}&title={{ article.title }}" target="_blank" title="Share on LinkedIn">
+                    <img src="/newsupdates-dev2/Components/currentnews/linkedin.png" alt="LinkedIn" />
+                </a>
+                <!-- WhatsApp Share -->
+                <a ng-href="https://api.whatsapp.com/send?text={{ article.title }} {{ article.url }}" target="_blank" title="Share on WhatsApp">
+                    <img src="/newsupdates-dev2/Components/currentnews/whatsapp.png" alt="WhatsApp" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
